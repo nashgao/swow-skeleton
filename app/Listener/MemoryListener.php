@@ -17,6 +17,7 @@ use Hyperf\Event\Annotation\Listener;
 use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Framework\Event\AfterWorkerStart;
 use Hyperf\Engine\Coroutine;
+use Hyperf\Server\Event\MainCoroutineServerStart;
 
 
 #[Listener]
@@ -27,6 +28,7 @@ class MemoryListener implements ListenerInterface
     {
         return [
             AfterWorkerStart::class,
+            MainCoroutineServerStart::class
         ];
     }
 
